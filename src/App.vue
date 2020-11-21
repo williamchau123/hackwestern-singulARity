@@ -38,6 +38,7 @@
     </v-app-bar>
 
     <v-main>
+      <userLocation/>
       <googleMap/>
     </v-main>
   </v-app>
@@ -45,12 +46,14 @@
 
 <script>
 import googleMap from './components/googleMap.vue';
+import userLocation from './components/UserLocation.vue'
 
 export default {
   name: 'App',
 
   components: {
     googleMap,
+    userLocation,
   },
 
   data: () => ({

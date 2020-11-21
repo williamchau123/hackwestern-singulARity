@@ -1,19 +1,35 @@
 <template>
-  <section class="ui two column centered grid">
-    <div class="column">
-      <form class="ui segment large form">
-          <div class="field">
-            <div class="ui right icon input large">
-              <input
-                type="text"
-                placeholder="Enter your address"
-                v-model="address"
-                ref="autocomplete"
-              />
-              <i class="dot circle link icon" @click="locatorButtonPressed"></i>
-            </div>
-        </div>
-      </form>
-    </div>
-  </section>
+  <div id="app">
+    <p>Lat = {{ lat }} Lon ={{ lon }}</p>
+    <p>{{ error }}</p>
+    <button @click="myFunction()">Click Me</button>
+  </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      error: "",
+      lat: "",
+      lon: "",
+    };
+  },
+  methods: {
+    myFunction: function () {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.showPosition);
+      } else {
+        this.error = "Geolocation is not supported.";
+      }
+    },
+    showPosition: function (position) {
+      this.lat = position.coords.latitude;
+      this.lon = position.coords.longitude;
+    },
+  },
+};
+</script>
+
+<style>
+</style>

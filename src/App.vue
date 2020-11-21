@@ -38,7 +38,7 @@
     </v-app-bar>
 
     <v-main>
-      <userLocation/>
+      <user-location />
       <googleMap/>
     </v-main>
   </v-app>
@@ -46,8 +46,7 @@
 
 <script>
 import googleMap from './components/googleMap.vue';
-import userLocation from './components/UserLocation.vue'
-
+import userLocation from './components/userLocation';
 export default {
   name: 'App',
 

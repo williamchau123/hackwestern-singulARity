@@ -38,19 +38,19 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <googleMap/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import googleMap from './components/googleMap.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    googleMap,
   },
 
   data: () => ({
